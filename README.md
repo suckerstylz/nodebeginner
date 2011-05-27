@@ -7,9 +7,13 @@ slightly changed version
 * request handlers exported
 * routing changed to express behaviour
 
+---------------------------------------
+
 * inlcuded backbone
 * included underscore
 * included stache - a mustache template-engine
+
+---------------------------------------
 
 ## ToDo's
 

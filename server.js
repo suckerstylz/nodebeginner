@@ -10,8 +10,8 @@ var app = module.exports = express.createServer().configure(function(){
 		this.use(express.methodOverride());
 		this.use(express.cookieParser());
 		this.use(express.session({ secret: '  ' }));
+		this.use(express.static( __dirname + '/public' ));
 		this.use(this.router);
-		this.use(express.static(__dirname + '/public'));
 		this.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 		
 	});

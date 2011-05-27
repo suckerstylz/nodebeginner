@@ -11,7 +11,8 @@ function route(server, requestHandlers) {
 	server.get('/mite', requestHandlers.mite);
 	server.get('/upload', requestHandlers.upload);
 	server.get('/names', requestHandlers.names);
-
+	server.get('/*', requestHandlers.noRoute);
+	
 	/**
 	 * Routing POST Methods
 	 */
@@ -19,6 +20,7 @@ function route(server, requestHandlers) {
 	server.post('/', requestHandlers.dashboard);
 	server.post('/upload', requestHandlers.upload);
 	server.post('/names', requestHandlers.names);
+	server.post('/*', requestHandlers.noRoute);
 	
 	/**
 	 * Routing PUT Methods
@@ -32,7 +34,7 @@ function route(server, requestHandlers) {
 	 * Routing ALL Methods
 	 */
 	
-	server.all('*', requestHandlers.noRoute);
+	//server.all('/*', requestHandlers.noRoute);
 	
 }
 

@@ -5,7 +5,7 @@ exports.dashboard = function(req, res) {
 			title: 'Dashboard'
 		}
 	});
-}
+};
 
 exports.login = function(req, res) {
 	console.log('Req handler for -login- was called');
@@ -14,17 +14,17 @@ exports.login = function(req, res) {
 			title: 'Login'
 		}
 	});
-}
+};
 
 exports.logout = function(req, res) {
 	console.log('Req handler for -logout- was called');
 	res.render('logout');
-}
+};
 
 exports.mite = function(req, res) {
 	console.log('Req handler for -mite- was called');
 	res.render('mite');
-}
+};
 
 exports.upload = function(req, res) {
 	console.log('Request handler for -upload- was called');
@@ -33,7 +33,7 @@ exports.upload = function(req, res) {
 			title: 'Upload'
 		}
 	});
-}
+};
 
 exports.names = function(req, res) {
 	console.log('Request handler for -names- was called');
@@ -50,13 +50,13 @@ exports.names = function(req, res) {
 			names: name
 		}
 	});
-}
+};
 
-exports.noRoute = function(req, res) {
-	console.log('Request handler for -no Route- was called');
-	res.render('404', {
-		locals: {
-			title: '404 Not Found'
-		}
-	});
-}
+exports.noRoute = function(req, res){
+	console.log('Request handler for -noRoute- was called');
+    res.render('404', {
+			locals: {
+				title: '404 - Not Found'
+			}
+		});
+};

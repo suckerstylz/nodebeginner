@@ -1,23 +1,20 @@
 # Nodebeginner Book Tutorial
-## working with express.js
+## Working with express.js
 
-slightly changed version
-
-* server exported
-* request handlers exported
-* routing changed to express behaviour
+* Server exported
+* Request Handlers exported
+* Routing changed to express behaviour
 
 ---------------------------------------
 
-* inlcuded backbone
-* included underscore
+* inlcuded backbone.js
+* included underscore.js
 * included stache - a mustache template-engine
-
----------------------------------------
 
 ## ToDo's
 
-* include mongo/mongodb/mongoose
+* include mongo / mongodb / mongoose
 * build a working backbone extension
-* eventually include sass as css-engine
+* use ICanHaz template engine with stache
+* eventually include SASS as css-engine
 

@@ -9,6 +9,8 @@
 
 * inlcuded backbone.js
 * included underscore.js
+* included icanhaz.js
+* included jquery.1.6.js
 * included stache - a mustache template-engine
 
 ## ToDo's

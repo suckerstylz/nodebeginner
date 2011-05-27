@@ -1,0 +1,12 @@
+{{>header}}
+<h1>{{ title }}</h1>
+	<form action="/names" method="post">
+		<input type="text" name="nameText" placeholder="give me a name" />
+		<input type="submit" id="nameSubmit" value="save" />
+	</form>
+	<ul>
+	{{#scripts}}
+	<li>{{to_s}}</li>
+	{{/scripts}}
+	</ul>
+{{>footer}}

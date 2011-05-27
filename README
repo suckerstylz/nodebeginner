@@ -1,4 +1,19 @@
-Nodebeginner Book Tutorial with Express included.
-very buggy early pre pre alpha
+# Nodebeginner Book Tutorial
+## working with express.js
 
-production branch
+slightly changed version
+
+server exported
+request handlers exported
+routing changed to express behaviour
+
+inlcuded backbone
+included underscore
+included stache - a mustache template-engine
+
+## ToDo's
+
+include mongo/mongodb/mongoose
+build a working backbone extension
+eventually include sass as css-engine
+

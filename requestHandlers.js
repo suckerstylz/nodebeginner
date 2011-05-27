@@ -1,6 +1,4 @@
-var querystring = require('querystring');
-
-function dashboard(res) {
+exports.dashboard = function(req, res) {
 	console.log('Request handler for -start- was called.');
 	res.render('dashboard', {
 		locals: {
@@ -9,7 +7,7 @@ function dashboard(res) {
 	});
 }
 
-function login(res) {
+exports.login = function(req, res) {
 	console.log('Req handler for -login- was called');
 	res.render('login', {
 		locals: {
@@ -18,39 +16,47 @@ function login(res) {
 	});
 }
 
-function logout(res) {
+exports.logout = function(req, res) {
 	console.log('Req handler for -logout- was called');
 	res.render('logout');
 }
 
-function mite(res) {
+exports.mite = function(req, res) {
 	console.log('Req handler for -mite- was called');
 	res.render('mite');
 }
 
-function upload(res, postData) {
+exports.upload = function(req, res) {
 	console.log('Request handler for -upload- was called');
 	res.render('upload', {
 		locals: {
-			title: 'Upload',
-			message: 'You have sent: ' + querystring.parse(postData)['text']
+			title: 'Upload'
 		}
 	});
 }
 
-function names(res, postData) {
-	console.log('Request handler for -name- was called');
+exports.names = function(req, res) {
+	console.log('Request handler for -names- was called');
+	
+	if(!req.body) {
+		name = 'no name set';
+	} else {	
+		name = req.body.nameText;
+	}
+	
 	res.render('names', {
 		locals: {
 			title: 'Names',
-			names: 'lol'
+			names: name
 		}
 	});
 }
 
-exports.dashboard = dashboard;
-exports.login = login;
-exports.logout = logout;
-exports.mite = mite;
-exports.upload = upload;
-exports.names = names;
+exports.noRoute = function(req, res) {
+	console.log('Request handler for -no Route- was called');
+	res.render('404', {
+		locals: {
+			title: '404 Not Found'
+		}
+	});
+}

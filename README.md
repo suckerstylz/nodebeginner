@@ -12,10 +12,10 @@
 * included icanhaz.js
 * included jquery.1.6.js
 * included stache - a mustache template-engine
+* included mongoose example
 
 ## ToDo's
 
-* include mongo / mongodb / mongoose
 * build a working backbone extension
 * use ICanHaz template engine with stache
 * eventually include SASS as css-engine

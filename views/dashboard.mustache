@@ -1,8 +1,11 @@
 {{>header}}
-<h1>{{ title }}</h1>
-	<form action="/names" method="post">
-		<input type="text" name="newname" id="newname" placeholder="give me a name" />
-		<input type="text" name="age" id="age" placeholder="give me an age" />
-		<input type="submit" id="nameSubmit" value="send" />
-	</form>
+	<time><a href="/users">Users in Database: {{total}}</a> {{date}}</time>
+	<section class="timeline">
+		{{>timeline}}
+	</section>
+	<section class="tools">
+		{{>nav}}
+		{{>mite}}
+		{{>miteentries}}
+	</section>
 {{>footer}}

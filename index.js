@@ -1,5 +1,5 @@
-var server = require('./server');
-var router = require('./router');
-var requestHandlers = require('./requestHandlers');
+var server = require('./app/server');
+var router = require('./app/router');
+var requestHandlers = require('./app/requestHandlers');
 
 router.route(server, requestHandlers);

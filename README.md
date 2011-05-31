@@ -4,6 +4,7 @@
 * Server exported
 * Request Handlers exported
 * Routing changed to express behaviour
+* Changed App Layout and Folder-Structure
 
 ---------------------------------------
 

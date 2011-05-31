@@ -1,0 +1,19 @@
+<form action="/messages/add" method="post" class="tl-form">
+	<select name="type">
+		<option selected name="message" value="message">Message</option>
+		<option name="link" value="link">Link</option>
+		<option name="reminder" value="reminder">Reminder</option>
+	</select>
+	<input type="text" name="message" placeholder="Nachricht eingeben" />
+	<input type="submit" id="submit" value="Senden" />
+</form>
+<ul class="reminders">
+{{#reminder}}
+		<li><a href="/messages/delete/{{_id}}">{{message}} - {{userId}}</a></li>
+{{/reminder}}
+</ul>
+<ul class="messages">
+{{#messages}}
+		<li><a href="/messages/delete/{{_id}}">{{message}} - {{userId}}</a></li>
+{{/messages}}
+</ul>

@@ -1,4 +1,4 @@
-function route(server, requestHandlers) {
+function router(server, requestHandlers) {
 	
 	/**
 	 * Routing GET Methods
@@ -11,6 +11,7 @@ function route(server, requestHandlers) {
 	server.get('/mite', requestHandlers.mite);
 	server.get('/upload', requestHandlers.upload);
 	server.get('/names', requestHandlers.names);
+	server.get('/names/delete/:id', requestHandlers.namesDelete);
 	server.get('/*', requestHandlers.noRoute);
 	
 	/**
@@ -18,6 +19,8 @@ function route(server, requestHandlers) {
 	 */
 	
 	server.post('/', requestHandlers.dashboard);
+	server.post('/login', requestHandlers.login);
+	server.post('/logout', requestHandlers.logout);
 	server.post('/upload', requestHandlers.upload);
 	server.post('/names', requestHandlers.names);
 	server.post('/*', requestHandlers.noRoute);
@@ -38,4 +41,4 @@ function route(server, requestHandlers) {
 	
 }
 
-exports.route = route;
+exports.route = router;

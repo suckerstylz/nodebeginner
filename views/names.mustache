@@ -1,6 +1,8 @@
 {{>header}}
 <h1>{{ title }}</h1>
 <ul id="nameList">
-<li>{{ names }}</li>
+{{#names}}
+<li><a href="/names/delete/{{_id}}">{{name}} - {{age}}</a></li>
+{{/names}}
 </ul>
 {{>footer}}

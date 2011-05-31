@@ -1,5 +1,8 @@
+var Names = require('./lib/mongoose-models/names');
+
 exports.dashboard = function(req, res) {
 	console.log('Request handler for -start- was called.');
+	
 	res.render('dashboard', {
 		locals: {
 			title: 'Dashboard'
@@ -36,20 +39,63 @@ exports.upload = function(req, res) {
 };
 
 exports.names = function(req, res) {
+	
 	console.log('Request handler for -names- was called');
 	
-	if(!req.body) {
-		name = 'no name set';
-	} else {	
-		name = req.body.nameText;
-	}
+	postData = req.body;
 	
-	res.render('names', {
-		locals: {
-			title: 'Names',
-			names: name
+	if(postData){
+		var name = new Names();
+		name.name = req.body.newname;
+		name.age = req.body.age;
+		name.save(function(err){
+			if(!err) {
+				Names.find({}, function(err, names){
+					res.render('names', {
+						locals: {
+							title: 'Names',
+							names: names
+						}
+					});
+				});
+			} else {
+				console.log(err);
+			}
+		});
+		
+	}	else {
+		Names.find({}, function(err, names){
+			if(!err){
+				res.render('names', {
+					locals: {
+						title: 'Names',
+						names: names
+					}
+				});
+			} else {
+				console.log(err);
+			}
+		});
+	}
+};
+
+exports.namesDelete = function(req, res){
+	console.log('Request handler for deleting name with id '+req.params.id);
+	
+	Names.findOne({ _id: req.params.id }, function(err, name){
+		if(name){
+			name.remove(function(err){
+				if(!err) {
+					res.redirect('back');
+				} else {
+					console.log(err);
+				}
+			});
+		} else {
+			console.log('No entry with given id found');
 		}
-	});
+	})
+	
 };
 
 exports.noRoute = function(req, res){

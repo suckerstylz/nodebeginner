@@ -1,7 +1,8 @@
 {{>header}}
 <h1>{{ title }}</h1>
 	<form action="/names" method="post">
-		<input type="text" name="nameText" placeholder="give me a name" />
+		<input type="text" name="newname" id="newname" placeholder="give me a name" />
+		<input type="text" name="age" id="age" placeholder="give me an age" />
 		<input type="submit" id="nameSubmit" value="send" />
 	</form>
 {{>footer}}

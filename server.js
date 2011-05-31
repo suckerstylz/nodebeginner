@@ -1,18 +1,19 @@
 var express = require('express');
 
-var app = module.exports = express.createServer().configure(function(){
+var app = module.exports = express.createServer();
+app.configure(function(){
 		
-		this.set('views', __dirname + '/views');
-		this.set('view engine', 'mustache');
-		this.set('view options', { layout: false });
-		this.register('.mustache', require('stache'));
-		this.use(express.bodyParser());
-		this.use(express.methodOverride());
-		this.use(express.cookieParser());
-		this.use(express.session({ secret: '  ' }));
-		this.use(express.static( __dirname + '/public' ));
-		this.use(this.router);
-		this.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+		app.set('views', __dirname + '/views');
+		app.set('view engine', 'mustache');
+		app.set('view options', { layout: false });
+		app.register('.mustache', require('stache'));
+		app.use(express.bodyParser());
+		app.use(express.methodOverride());
+		app.use(express.cookieParser());
+		app.use(express.session({ secret: '  ' }));
+		app.use(express.static( __dirname + '/public' ));
+		app.use(this.router);
+		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 		
 	});
 	

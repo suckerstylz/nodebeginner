@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.createConnection('mongodb://localhost/dummymessages');
-
 var Schema = mongoose.Schema
 		,ObjectId = Schema.ObjectId;
 	
@@ -14,4 +12,4 @@ var Messages = new Schema({
 
 mongoose.model('Messages', Messages);
 
-module.exports = db.model('Messages');
+module.exports = global.db.model('Messages');

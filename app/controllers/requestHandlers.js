@@ -1,5 +1,5 @@
-var Users = require('../lib/mongoose-models/users');
-var Messages = require('../lib/mongoose-models/messages');
+var Users = require('../models/users');
+var Messages = require('../models/messages');
 
 exports.dashboard = function(req, res) {
 	console.log('Request handler for -start- was called.');

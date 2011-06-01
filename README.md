@@ -4,7 +4,11 @@
 * Server exported
 * Request Handlers exported
 * Routing changed to express behaviour
-* Changed App Layout and Folder-Structure
+* Refcatored many things
+
+included an on-top layer for modularity
+changed folder structure again
+
 
 ---------------------------------------
 
@@ -17,7 +21,8 @@
 
 ## ToDo's
 
-* build a working backbone extension
+* find 'teh best' solution for mvc behaviour
+* build a working backbone extension <-- 
 * use ICanHaz template engine with stache
 * eventually include SASS as css-engine
 

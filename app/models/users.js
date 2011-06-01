@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.createConnection('mongodb://localhost/dummyusers');
-
 var Schema = mongoose.Schema
 	,	ObjectId = Schema.ObjectId;
 	
@@ -12,4 +10,4 @@ var Users = new Schema({
 
 mongoose.model('Users', Users);
 
-module.exports = db.model('Users');
+module.exports = global.db.model('Users');
